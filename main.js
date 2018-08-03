@@ -271,7 +271,7 @@
             if (this.watchId) {
                 GPSUtils.clearWatch(watchId);
             }
-            this.watchId = null;
+            this.watchId = null;EARTH_RADIUS
         }
 
     });
@@ -397,10 +397,10 @@
 
         // Dummy data 
         points: [
-            { latitude: 21.0466076, longitude: 105.7948739, altitude: 0.1 },
-            { latitude: 21.0464291, longitude: 105.7948739, altitude: 0.4 },
-            { latitude: 21.0464291, longitude: 105.7951051, altitude: 0.2 },
-            { latitude: 21.0463541, longitude: 105.7951051, altitude: 0.2 }
+            { latitude: 21.0466076, longitude: 105.7948739, altitude: 1 },
+            { latitude: 21.0464291, longitude: 105.7948739, altitude: 4 },
+            { latitude: 21.0464291, longitude: 105.7951051, altitude: 2 },
+            { latitude: 21.0463541, longitude: 105.7951051, altitude: 2 }
         ],
 
         init: function () {
