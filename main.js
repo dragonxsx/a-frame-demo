@@ -398,9 +398,10 @@
 
         // Dummy data 
         points: [
-            { latitude: 21.046906, longitude: 105.794689, altitude: 0.5 },
-            { latitude: 21.047347, longitude: 105.794657, altitude: 0.5 },    
-            { latitude: 21.047437, longitude: 105.794936, altitude: 0.5 },
+            { latitude: 21.046351, longitude: 105.794621, altitude: 0.1 },
+            { latitude: 21.046604, longitude: 105.794600, altitude: 0.2 },    
+            { latitude: 21.046884, longitude: 105.794597, altitude: 0.1 },
+            { latitude: 21.047320, longitude: 105.794817, altitude: 0.1 }
         ],
 
         init: function () {
