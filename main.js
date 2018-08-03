@@ -200,7 +200,8 @@
             geometry.vertices.push(new THREE.Vector3(roadPoints[i].x, roadPoints[i].y, roadPoints[i].z));
 
             if (i < roadPoints.length - 2) {
-                face.color.set(new THREE.Color(Math.random() * 0xffffff - 1));
+                //face.color.set(new THREE.Color(Math.random() * 0xffffff - 1));
+                face.color.set(new THREE.Color(0xffff00));
                 geometry.faces.push(face);
             }
         }
