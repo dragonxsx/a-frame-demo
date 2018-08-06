@@ -52,8 +52,8 @@
 			document.querySelector('.z2').innerText = z;	
 		}
 
-		//window.ondeviceorientation = function(event) {
-		function deviceOrientationListener(event) {
+		window.deviceorientation = function(event) {
+		//function deviceOrientationListener(event) {
 			var alpha = event.alpha;
 			var beta = event.beta;
 			var gamma = event.gamma;
@@ -62,11 +62,11 @@
 			document.querySelector('.gamma').innerText = gamma;
 		}
 
-		if (window.DeviceOrientationEvent) {
-        	window.addEventListener("deviceorientation", deviceOrientationListener);
-      	} else {
-        	alert("Sorry, your browser doesn't support Device Orientation");
-      	}
+		//if (window.DeviceOrientationEvent) {
+        //	window.addEventListener("deviceorientation", deviceOrientationListener);
+      	//} else {
+        //	alert("Sorry, your browser doesn't support Device Orientation");
+      	//}
 	</script>  
 </body>
 </html>
