@@ -51,12 +51,12 @@
 			document.querySelector('.y2').innerText = y;
 			document.querySelector('.z2').innerText = z;
 
-			x = event.rotationRate.x;
-			y = event.rotationRate.y;
-			z = event.rotationRate.z;
-			document.querySelector('.x3').innerText = x;
-			document.querySelector('.y3').innerText = y;
-			document.querySelector('.z3').innerText = z;
+			var alpha = event.rotationRate.alpha;
+			var beta = event.rotationRate.beta;
+			var gamma = event.rotationRate.gamma;
+			document.querySelector('.x3').innerText = alpha;
+			document.querySelector('.y3').innerText = beta;
+			document.querySelector('.z3').innerText = gamma;
 		}
 	</script>  
 </body>
