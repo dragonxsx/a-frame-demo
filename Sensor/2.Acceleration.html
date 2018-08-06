@@ -15,9 +15,9 @@
 		z: <span class="z2"></span><br><br>
 
 		Gyroscope:<br>
-		x: <span class="x3"></span><br>
-		y: <span class="y3"></span><br>
-		z: <span class="z3"></span><br><br>
+		alpha: <span class="alpha"></span><br>
+		beta: <span class="beta"></span><br>
+		gamma: <span class="gamma"></span><br><br>
 	</section>
 	
 	<script type="text/javascript">    
@@ -49,14 +49,16 @@
 			z = event.acceleration.z;
 			document.querySelector('.x2').innerText = x;
 			document.querySelector('.y2').innerText = y;
-			document.querySelector('.z2').innerText = z;
+			document.querySelector('.z2').innerText = z;	
+		}
 
+		window.ondeviceorientation = function(event) {
 			var alpha = event.alpha;
 			var beta = event.beta;
 			var gamma = event.gamma;
-			document.querySelector('.x3').innerText = alpha;
-			document.querySelector('.y3').innerText = beta;
-			document.querySelector('.z3').innerText = gamma;
+			document.querySelector('.alpha').innerText = alpha;
+			document.querySelector('.beta').innerText = beta;
+			document.querySelector('.gamma').innerText = gamma;
 		}
 	</script>  
 </body>
