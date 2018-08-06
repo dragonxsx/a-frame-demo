@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Device Motion</title>
+</head>
+<body>
+	<section id="content">
+		Acceleration Including Gravity:<br>
+		x: <span class="x1"></span><br>
+		y: <span class="y1"></span><br>
+		z: <span class="z1"></span>
+	</section>
+	
+	<script type="text/javascript">    
+		<!-- if('ondevicemotion' in window) {   -->
+			<!-- var speed = 25;   -->
+			<!-- var x = y = z = 0;   -->
+			<!-- window.addEventListener('devicemotion', function(){   -->
+				<!-- var acceleration =event.accelerationIncludingGravity;   -->
+				<!-- x = acceleration.x;   -->
+				<!-- y = acceleration.y; -->
+				<!-- z = acceleration.z; -->
+				
+				<!-- document.querySelector('.x1').innerText = x; -->
+				<!-- document.querySelector('.y1').innerText = y; -->
+				<!-- document.querySelector('.z1').innerText = z; -->
+			<!-- }, false);   -->
+		<!-- } -->
+
+		window.ondevicemotion = function(event) {
+			var x = event.accelerationIncludingGravity.x;
+			var y = event.accelerationIncludingGravity.y;
+			var z = event.accelerationIncludingGravity.z;
+			
+			document.querySelector('.x1').innerText = x;
+			document.querySelector('.y1').innerText = y;
+			document.querySelector('.z1').innerText = z;
+		}
+	</script>  
+</body>
+</html>
