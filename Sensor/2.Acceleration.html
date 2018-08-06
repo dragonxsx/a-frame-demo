@@ -7,7 +7,12 @@
 		Acceleration Including Gravity:<br>
 		x: <span class="x1"></span><br>
 		y: <span class="y1"></span><br>
-		z: <span class="z1"></span>
+		z: <span class="z1"></span><br><br>
+
+		Acceleration:<br>
+		x: <span class="x2"></span><br>
+		y: <span class="y2"></span><br>
+		z: <span class="z2"></span>
 	</section>
 	
 	<script type="text/javascript">    
@@ -29,11 +34,19 @@
 		window.ondevicemotion = function(event) {
 			var x = event.accelerationIncludingGravity.x;
 			var y = event.accelerationIncludingGravity.y;
-			var z = event.accelerationIncludingGravity.z;
-			
+			var z = event.accelerationIncludingGravity.z;			
 			document.querySelector('.x1').innerText = x;
 			document.querySelector('.y1').innerText = y;
 			document.querySelector('.z1').innerText = z;
+
+			x = event.acceleration.x;
+			y = event.acceleration.y;
+			z = event.acceleration.z;
+			document.querySelector('.x2').innerText = x;
+			document.querySelector('.y2').innerText = y;
+			document.querySelector('.z2').innerText = z;
+
+
 		}
 	</script>  
 </body>
