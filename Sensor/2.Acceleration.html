@@ -20,23 +20,8 @@
 		gamma: <span class="gamma"></span><br><br>
 	</section>
 	
-	<script type="text/javascript">    
-		<!-- if('ondevicemotion' in window) {   -->
-			<!-- var speed = 25;   -->
-			<!-- var x = y = z = 0;   -->
-			<!-- window.addEventListener('devicemotion', function(){   -->
-				<!-- var acceleration =event.accelerationIncludingGravity;   -->
-				<!-- x = acceleration.x;   -->
-				<!-- y = acceleration.y; -->
-				<!-- z = acceleration.z; -->
-				
-				<!-- document.querySelector('.x1').innerText = x; -->
-				<!-- document.querySelector('.y1').innerText = y; -->
-				<!-- document.querySelector('.z1').innerText = z; -->
-			<!-- }, false);   -->
-		<!-- } -->
-
-		window.ondevicemotion = function(event) {
+	<script type="text/javascript">
+		function deviceMotionListener(event) {
 			var x = event.accelerationIncludingGravity.x;
 			var y = event.accelerationIncludingGravity.y;
 			var z = event.accelerationIncludingGravity.z;			
@@ -52,7 +37,6 @@
 			document.querySelector('.z2').innerText = z;	
 		}
 
-		//window.deviceorientation = function(event) {
 		function deviceOrientationListener(event) {
 			var alpha = event.alpha;
 			var beta = event.beta;
@@ -67,6 +51,11 @@
       	} else {
         	alert("Sorry, your browser doesn't support Device Orientation");
       	}
+
+		if('ondevicemotion' in window) {
+			 window.addEventListener('devicemotion', deviceMotionListener);
+		}
+		
 	</script>  
 </body>
 </html>
