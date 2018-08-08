@@ -500,10 +500,9 @@
 
         // Dummy data 
         points: [
-            { latitude: 21.046351, longitude: 105.794621, altitude: 0 },
-            { latitude: 21.046604, longitude: 105.794600, altitude: 0 },    
-            { latitude: 21.046884, longitude: 105.794597, altitude: 0 },
-            { latitude: 21.047320, longitude: 105.794817, altitude: 0 }
+            { latitude: 21.046306, longitude: 105.7937535, altitude: 0 },
+            { latitude: 21.046296, longitude: 105.7940615, altitude: 0 },    
+            { latitude: 21.046309, longitude: 105.7944045, altitude: 0 }
         ],
 
         init: function () {
