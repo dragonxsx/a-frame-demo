@@ -47,66 +47,6 @@
                 }
             });
 
-        };
-    </script>
-</head>
-
-<body>
-
-    <div id="tracking-panel">
-        <div>
-            coords:
-            <span id="crd_longitude"></span>,
-            <span id="crd_latitude"></span>
-            (zero coords:
-            <span id="zero_crd_longitude"></span>,
-            <span id="zero_crd_latitude"></span>)
-        </div>
-        <div>
-            camera coords:
-            <span id="camera_p_x"></span>,
-            <span id="camera_p_z"></span>
-        </div>
-        <div>
-            camera angle:
-            <span id="camera_angle"></span>, yaw angle:
-            <span id="yaw_angle"></span>
-        </div>
-            compass heading:
-                <span id="compass_heading">
-        <div>
-        </div>
-            Device device orientation:
-                <span id="device_orientation">
-        <div>
-        </div>
-        <section id="content">
-            Acceleration Including Gravity:<br>
-            x: <span class="x1"></span><br>
-            y: <span class="y1"></span><br>
-            z: <span class="z1"></span><br><br>
-    
-            Acceleration:<br>
-            x: <span class="x2"></span><br>
-            y: <span class="y2"></span><br>
-            z: <span class="z2"></span><br><br>
-    
-            Gyroscope:<br>
-            alpha: <span class="alpha"></span><br>
-            beta: <span class="beta"></span><br>
-            gamma: <span class="gamma"></span><br><br>
-        </section>
-    </div>
-
-    <a-scene embedded arjs="sourceType: webcam;">
-        <a-camera id="camera" user-height="1.6" gps-position compass-rotation>
-        </a-camera>
-
-        <a-entity road>
-        </a-entity>
-    </a-scene>
-
-    <script>
             function deviceMotionListener(event) {
                 var x = event.accelerationIncludingGravity.x;
                 var y = event.accelerationIncludingGravity.y;
@@ -141,6 +81,67 @@
             if('ondevicemotion' in window) {
                  window.addEventListener('devicemotion', deviceMotionListener);
             }
+        };
+    </script>
+</head>
+
+<body>
+
+    <div id="tracking-panel">
+        <div>
+            coords:
+            <span id="crd_longitude"></span>,
+            <span id="crd_latitude"></span>
+            (zero coords:
+            <span id="zero_crd_longitude"></span>,
+            <span id="zero_crd_latitude"></span>)
+        </div>
+        <div>
+            camera coords:
+            <span id="camera_p_x"></span>,
+            <span id="camera_p_z"></span>
+        </div>
+        <div>
+            camera angle:
+            <span id="camera_angle"></span>, yaw angle:
+            <span id="yaw_angle"></span>
+        </div>
+            compass heading:
+                <span id="compass_heading">
+        <div>
+        </div>
+            Device device orientation:
+                <span id="device_orientation">
+        <div>
+        </div>
+        <div id="content">
+            Acceleration Including Gravity:<br>
+            x: <span class="x1"></span><br>
+            y: <span class="y1"></span><br>
+            z: <span class="z1"></span><br><br>
+    
+            Acceleration:<br>
+            x: <span class="x2"></span><br>
+            y: <span class="y2"></span><br>
+            z: <span class="z2"></span><br><br>
+    
+            Gyroscope:<br>
+            alpha: <span class="alpha"></span><br>
+            beta: <span class="beta"></span><br>
+            gamma: <span class="gamma"></span><br><br>
+        </div>
+    </div>
+
+    <a-scene embedded arjs="sourceType: webcam;">
+        <a-camera id="camera" user-height="1.6" gps-position compass-rotation>
+        </a-camera>
+
+        <a-entity road>
+        </a-entity>
+    </a-scene>
+
+    <script>
+            
     </script>
 </body>
 
