@@ -446,6 +446,7 @@
             var heading = 360 - this.heading;
 
             var cameraRotation = this.el.getAttribute('rotation').y;
+            alert(cameraRotation);
             var yawRotation = THREE.Math.radToDeg(this.lookControls.yawObject.rotation.y);
 
             var offset = (heading - (cameraRotation - yawRotation)) % 360;
