@@ -133,6 +133,7 @@
             orientation = "landscape-secondary"
             break;
         }   
+        alert(orientation);
       }
   
       return orientation;
