@@ -174,6 +174,7 @@
         // Adjust compass heading
         var adjustment = 0;
         var browserOrientation = CompassUtils.getBrowserOrientation();
+        alert(browserOrientation);
         if (typeof browserOrientation !== "undefined") {
             var currentOrientation = browserOrientation.split("-");
     
