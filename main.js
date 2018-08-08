@@ -448,20 +448,21 @@
             var cameraRotation = this.el.getAttribute('rotation').y;
             var yawRotation = THREE.Math.radToDeg(this.lookControls.yawObject.rotation.y);
 
-            // var deviceOrientation = CompassUtils.getBrowserOrientation();
-            // if (typeof deviceOrientation !== "undefined") {
-            //     var currentOrientation = deviceOrientation.split("-");
+            var adjustment = 0
+            var deviceOrientation = CompassUtils.getBrowserOrientation();
+            if (typeof deviceOrientation !== "undefined") {
+                var currentOrientation = deviceOrientation.split("-");
         
-            //     if (currentOrientation[0] === "landscape") {
-            //         adjustment -= 270;
-            //     } else {
-            //         adjustment -= 90;
-            //     }
+                if (currentOrientation[0] === "landscape") {
+                    adjustment -= 270;
+                } else {
+                    adjustment -= 90;
+                }
         
-            //     if (currentOrientation[1] === "secondary") {
-            //       adjustment -= 180;
-            //     }
-            // }
+                if (currentOrientation[1] === "secondary") {
+                  adjustment -= 180;
+                }
+            }
 
             var offset = (heading - (cameraRotation - yawRotation)) % 360;
 
