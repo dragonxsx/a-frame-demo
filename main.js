@@ -467,6 +467,7 @@
             }
 
             var offset = (heading - (cameraRotation - yawRotation)) % 360;
+            var offset = heading + adjustment;
 
             this.lookControls.yawObject.rotation.y = THREE.Math.degToRad(offset);
         },
@@ -498,14 +499,12 @@
             }
         },
 
-        // Dummy data 
+        // Path
         points: [
             { latitude: 21.046306, longitude: 105.7937535, altitude: 0 },
             { latitude: 21.046296, longitude: 105.7940615, altitude: 0 },    
             { latitude: 21.046309, longitude: 105.794953, altitude: 0 }
         ],
-
-        
 
         init: function () {
             if (this.deferredInit()) { return; }
