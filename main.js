@@ -133,7 +133,6 @@
             orientation = "landscape-secondary"
             break;
         }   
-        alert(orientation);
       }
   
       return orientation;
@@ -433,7 +432,7 @@
                 }
 
             } else if (evt.alpha !== null) {
-                if (evt.absolute === true || typeof (evt.absolute == 'undefined')) {
+                if (evt.absolute === true || typeof (evt.absolute) == 'undefined') {
                     heading = CompassUtils.getCompassHeading(evt.alpha, evt.beta, evt.gamma);
                 } else {
                     console.warn('evt.absolute === false');
@@ -451,14 +450,13 @@
             var cameraRotation = this.el.getAttribute('rotation').y;
             var yawRotation = THREE.Math.radToDeg(this.lookControls.yawObject.rotation.y);
 
-
             var adjustment = 0
             var deviceOrientation = CompassUtils.getBrowserOrientation();
             if (typeof deviceOrientation !== "undefined") {
                 var currentOrientation = deviceOrientation.split("-");
         
                 if (currentOrientation[0] === "landscape") {
-                    adjustment -= 270;
+                    adjustment -= 270; 
                 } else {
                     adjustment -= 90;
                 }
@@ -467,7 +465,6 @@
                   adjustment -= 180;
                 }
             }
-            alert(adjustment);
 
             var offset = (heading - (cameraRotation - yawRotation)) % 360;
 
