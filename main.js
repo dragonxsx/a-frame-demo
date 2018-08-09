@@ -347,6 +347,7 @@
         lookControls: null,
         lastTimestamp: 0,
         heading: null,
+        defaultOrientation: null,
 
         schema: {
             fixTime: {
@@ -377,6 +378,12 @@
                     console.error('Compass not supported');
                     return;
                 }
+            }
+
+            if (screen.width > screen.height) {
+                this.defaultOrientation = "landscape";
+            } else {
+                this.defaultOrientation = "portrait";
             }
 
             window.addEventListener(this.data.orientationEvent, this.handlerOrientation.bind(this), false);
@@ -422,21 +429,27 @@
 
              // Adjust compass heading
             var adjustment = 0;
+            if(this.defaultOrientation === "landscape"){
+                adjustment = -90;
+            }
+
             var browserOrientation = CompassUtils.getBrowserOrientation();
             if (typeof browserOrientation !== "undefined") {
                 var currentOrientation = browserOrientation.split("-");
 
-                if (currentOrientation[0] === "landscape") {
-                    adjustment -= 270;
-                } else {
-                    adjustment -= 90;
+                if (this.defaultOrientation !== currentOrientation[0]) {
+                    if (this.defaultOrientation === "landscape") {
+                      adjustment -= 270;
+                    } else {
+                      adjustment -= 90;
+                    }
                 }
 
                 if (currentOrientation[1] === "secondary") {
                     adjustment -= 180;
                 }
             }
-            
+
             heading = heading + adjustment;
 
             this.heading = heading;
