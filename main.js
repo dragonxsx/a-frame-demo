@@ -422,9 +422,7 @@
 
              // Adjust compass heading
             var adjustment = 0;
-            alert(1);
             var browserOrientation = CompassUtils.getBrowserOrientation();
-            alert(browserOrientation);
             if (typeof browserOrientation !== "undefined") {
                 var currentOrientation = browserOrientation.split("-");
 
@@ -438,8 +436,7 @@
                     adjustment -= 180;
                 }
             }
-
-            alert(heading);
+            
             heading = heading + adjustment;
 
             this.heading = heading;
