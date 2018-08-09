@@ -437,6 +437,7 @@
                     adjustment -= 180;
                 }
             }
+            alert(heading);
             heading = heading + adjustment;
 
             this.heading = heading;
