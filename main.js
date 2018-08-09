@@ -172,7 +172,7 @@
         compassHeading *= 180 / Math.PI;
 
         // Adjust compass heading
-        var adjustment = 0;
+        var adjustment = -90;
         alert("1");
         var browserOrientation = this.getBrowserOrientation();
         alert(browserOrientation);
