@@ -266,7 +266,7 @@
         // Create a closed wavey loop
         var curve = new THREE.CatmullRomCurve3(points);
 
-        var material = new THREE.MeshBasicMaterial({ vertexColors: THREE.FaceColors, side: THREE.DoubleSide, opacity: 1 });
+        var material = new THREE.MeshBasicMaterial({ vertexColors: THREE.FaceColors, side: THREE.DoubleSide, opacity: 0.5 });
 
         // Create a triangular geometry
         points = curve.getPoints(100 * points.length);
