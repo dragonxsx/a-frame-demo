@@ -7,6 +7,31 @@
     <script src="main.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script>
+        function deviceMotionListener(event) {
+            var x = event.accelerationIncludingGravity.x;
+            var y = event.accelerationIncludingGravity.y;
+            var z = event.accelerationIncludingGravity.z;			
+            document.querySelector('.x1').innerText = x;
+            document.querySelector('.y1').innerText = y;
+            document.querySelector('.z1').innerText = z;
+
+            x = event.acceleration.x;
+            y = event.acceleration.y;
+            z = event.acceleration.z;
+            document.querySelector('.x2').innerText = x;
+            document.querySelector('.y2').innerText = y;
+            document.querySelector('.z2').innerText = z;	
+        }
+
+        function deviceOrientationListener(event) {
+            var alpha = event.alpha;
+            var beta = event.beta;
+            var gamma = event.gamma;
+            document.querySelector('.alpha').innerText = alpha;
+            document.querySelector('.beta').innerText = beta;
+            document.querySelector('.gamma').innerText = gamma;
+        }
+
         // Add a event listener for tracking camera's position and rotation
         window.onload = function () {
 
@@ -46,31 +71,6 @@
                         break;
                 }
             });
-
-            function deviceMotionListener(event) {
-                var x = event.accelerationIncludingGravity.x;
-                var y = event.accelerationIncludingGravity.y;
-                var z = event.accelerationIncludingGravity.z;			
-                document.querySelector('.x1').innerText = x;
-                document.querySelector('.y1').innerText = y;
-                document.querySelector('.z1').innerText = z;
-    
-                x = event.acceleration.x;
-                y = event.acceleration.y;
-                z = event.acceleration.z;
-                document.querySelector('.x2').innerText = x;
-                document.querySelector('.y2').innerText = y;
-                document.querySelector('.z2').innerText = z;	
-            }
-    
-            function deviceOrientationListener(event) {
-                var alpha = event.alpha;
-                var beta = event.beta;
-                var gamma = event.gamma;
-                document.querySelector('.alpha').innerText = alpha;
-                document.querySelector('.beta').innerText = beta;
-                document.querySelector('.gamma').innerText = gamma;
-            }
     
             if (window.DeviceOrientationEvent) {
                 window.addEventListener("deviceorientation", deviceOrientationListener);
