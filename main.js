@@ -348,6 +348,7 @@
         lastTimestamp: 0,
         heading: null,
         defaultOrientation: null,
+        currentOrientation: null,
 
         schema: {
             fixTime: {
@@ -435,9 +436,9 @@
 
             var browserOrientation = CompassUtils.getBrowserOrientation();
             if (typeof browserOrientation !== "undefined") {
-                var currentOrientation = browserOrientation.split("-");
+                this.currentOrientation = browserOrientation.split("-");
 
-                if (this.defaultOrientation !== currentOrientation[0]) {
+                if (this.defaultOrientation !== this.currentOrientation[0]) {
                     if (this.defaultOrientation === "landscape") {
                       adjustment -= 270;
                     } else {
@@ -445,7 +446,7 @@
                     }
                 }
 
-                if (currentOrientation[1] === "secondary") {
+                if (this.currentOrientation[1] === "secondary") {
                     adjustment -= 180;
                 }
             }
