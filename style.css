@@ -17,12 +17,13 @@ body {
 }
 
 .compass {
-    position: relative;
+    position: fixed;
     width: 25%;
     padding-top: 100%;
     text-align: center;
     bottom: 10px;
     left: 10px;
+    z-index: 1;
   }
   
     .compass__rose {
