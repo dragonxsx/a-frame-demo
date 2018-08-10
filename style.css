@@ -8,8 +8,7 @@ body {
 }
 
 #tracking-panel {
-    position: relative;
-    float: left;
+    position: fixed;
     top: 10px;
     width:100%;
     text-align: right;
