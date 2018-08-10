@@ -11,7 +11,7 @@
     }
 
     var EARTH_RADIUS = 6378160;
-    var GPS_MAX_ACCURY = 10;
+    var GPS_MAX_ACCURY = 50;
 
     function GPSUtils() { }
 
