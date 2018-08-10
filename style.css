@@ -15,3 +15,31 @@ body {
     z-index: 1;
     /* text-shadow:-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; */
 }
+
+.compass {
+    position: relative;
+    width: 25%;
+    padding-top: 100%;
+    text-align: center;
+    bottom: 10px;
+    left: 10px;
+  }
+  
+    .compass__rose {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  
+      .compass__rose__dial {
+        height: 100%;
+        width: 100%;
+      }
+  
+    .compass__pointer {
+      height: 100%;
+      width: 100%;
+    }
+  
