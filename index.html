@@ -61,6 +61,7 @@
                             if (gpsPosition.coords) {
                                 crd_longitude.innerText = gpsPosition.coords.longitude;
                                 crd_latitude.innerText = gpsPosition.coords.latitude;
+                                crd_accuracy.innerText = gpsPosition.coords.accuracy;
                             }
                             if (gpsPosition.zeroCoords) {
                                 zero_crd_longitude.innerText = gpsPosition.zeroCoords.longitude;
@@ -91,11 +92,14 @@
         <div>
             coords:
             <span id="crd_longitude"></span>,
-            <span id="crd_latitude"></span><br>
+            <span id="crd_latitude"></span><br><br>
 
             (zero coords:
             <span id="zero_crd_longitude"></span>,
             <span id="zero_crd_latitude"></span>)<br>
+
+            GPS accuracy:
+            <span id="crd_accuracy"></span><br>
         </div>
         <div>
             camera coords:
