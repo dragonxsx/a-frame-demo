@@ -27,7 +27,7 @@ body {
   }
   
     .compass__rose {
-      position: absolute;
+      position: relative;
       top: 0;
       left: 0;
       right: 0;
@@ -35,11 +35,13 @@ body {
     }
   
       .compass__rose__dial {
+        position: relative;
         height: 100%;
         width: 100%;
       }
   
     .compass__pointer {
+      position: relative;
       height: 100%;
       width: 100%;
     }
