@@ -12,7 +12,7 @@ body {
     top: 10px;
     width:100%;
     text-align: right;
-    z-index: 2;
+    z-index: 1;
 }
 
 .container {
