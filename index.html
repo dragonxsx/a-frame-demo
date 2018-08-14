@@ -32,6 +32,12 @@
             document.querySelector('#gamma').innerText = gamma;
         }
 
+        function calHeightByAcceleration(x,y,z){
+            var sqrt = Number((x * x) + (y * y) + (z * z));
+            var gravity = Math.sqrt(sqrt);
+            return gravity;
+        }
+
         // Add a event listener for tracking camera's position and rotation
         window.onload = function () {
 
@@ -131,7 +137,10 @@
         </div>
         <div>
             Device device orientation:
-            <span id="device_orientation">
+            <span id="device_orientation"></span><br>
+            
+            Gravity: 
+            <span id="gravity"></span>
         </div>
     </div>
 
