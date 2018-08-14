@@ -8,21 +8,29 @@
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script>
         function deviceMotionListener(event) {
-            var x = event.accelerationIncludingGravity.x;
-            var y = event.accelerationIncludingGravity.y;
-            var z = event.accelerationIncludingGravity.z;			
-            document.querySelector('#x1').innerText = x;
-            document.querySelector('#y1').innerText = y;
-            document.querySelector('#z1').innerText = z;
+            var x1 = event.accelerationIncludingGravity.x;
+            var y1 = event.accelerationIncludingGravity.y;
+            var z1 = event.accelerationIncludingGravity.z;			
+            document.querySelector('#x1').innerText = x1;
+            document.querySelector('#y1').innerText = y1;
+            document.querySelector('#z1').innerText = z1;
 
-            gravity.innerText = calHeightByAcceleration(x, y, z);
+            
 
-            x = event.acceleration.x;
-            y = event.acceleration.y;
-            z = event.acceleration.z;
+
+            var x2 = event.acceleration.x;
+            var y2 = event.acceleration.y;
+            var z2 = event.acceleration.z;
             document.querySelector('#x2').innerText = x;
             document.querySelector('#y2').innerText = y;
             document.querySelector('#z2').innerText = z;
+
+            gravity.innerText = calHeightByAcceleration(x1 - x2, y1 - y2, z1 - z2);
+
+            // Calculate height: http://www.citycollegiate.com/gravitation_XId.htm
+            // g/g' = 1 - 2h/Re
+
+            var Re = 6378160;
         }
 
         function deviceOrientationListener(event) {
@@ -143,7 +151,7 @@
             <span id="device_orientation"></span><br>
             
             Gravity: 
-            <span id="gravity"></span>
+            <span id="gravity"></span> Height: <span id="device_height"></span>
         </div>
     </div>
 
