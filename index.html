@@ -15,14 +15,14 @@
             document.querySelector('#y1').innerText = y;
             document.querySelector('#z1').innerText = z;
 
+            gravity.innerText = calHeightByAcceleration(x, y, z);
+
             x = event.acceleration.x;
             y = event.acceleration.y;
             z = event.acceleration.z;
             document.querySelector('#x2').innerText = x;
             document.querySelector('#y2').innerText = y;
             document.querySelector('#z2').innerText = z;
-            
-            gravity.innerText = calHeightByAcceleration(x, y, z);
         }
 
         function deviceOrientationListener(event) {
