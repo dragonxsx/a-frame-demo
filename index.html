@@ -15,17 +15,14 @@
             document.querySelector('#y1').innerText = y1;
             document.querySelector('#z1').innerText = z1;
 
-            
-
-
             var x2 = event.acceleration.x;
             var y2 = event.acceleration.y;
             var z2 = event.acceleration.z;
-            document.querySelector('#x2').innerText = x;
-            document.querySelector('#y2').innerText = y;
-            document.querySelector('#z2').innerText = z;
+            document.querySelector('#x2').innerText = x2;
+            document.querySelector('#y2').innerText = y2;
+            document.querySelector('#z2').innerText = z2;
 
-            gravity.innerText = calHeightByAcceleration(x1 - x2, y1 - y2, z1 - z2);
+            gravity.innerText = calHeightByAcceleration(x1-x2, y1-y2, z1-z2);
 
             // Calculate height: http://www.citycollegiate.com/gravitation_XId.htm
             // g/g' = 1 - 2h/Re
