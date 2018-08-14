@@ -20,7 +20,9 @@
             z = event.acceleration.z;
             document.querySelector('#x2').innerText = x;
             document.querySelector('#y2').innerText = y;
-            document.querySelector('#z2').innerText = z;	
+            document.querySelector('#z2').innerText = z;
+            
+            gravity.innerText = calHeightByAcceleration(x, y, z);
         }
 
         function deviceOrientationListener(event) {
@@ -56,6 +58,7 @@
 
                         if (compassRotation) {
                             compass_heading.innerText = compassRotation.heading;
+                            device_orientation.innerText = compassRotation.currentOrientation;
                         }
                         break;
                     case 'position':
