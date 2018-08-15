@@ -462,22 +462,6 @@
             var cameraRotation = this.el.getAttribute('rotation').y;
             var yawRotation = THREE.Math.radToDeg(this.lookControls.yawObject.rotation.y);
 
-            // var adjustment = 0
-            // var deviceOrientation = CompassUtils.getBrowserOrientation();
-            // if (typeof deviceOrientation !== "undefined") {
-            //     var currentOrientation = deviceOrientation.split("-");
-        
-            //     if (currentOrientation[0] === "landscape") {
-            //         adjustment -= 270; 
-            //     } else {
-            //         adjustment -= 90;
-            //     }
-        
-            //     if (currentOrientation[1] === "secondary") {
-            //       adjustment -= 180;
-            //     }
-            // }
-
             var offset = (heading - (cameraRotation - yawRotation)) % 360;
             //var offset = heading + adjustment;
 
@@ -514,11 +498,11 @@
         // Path
         points: [
             { latitude: 21.046456, longitude: 105.794621, altitude: 0 },
-            { latitude: 21.046281, longitude: 105.794618, altitude: 0 },    
-            { latitude: 21.046178, longitude: 105.795098, altitude: 0 },
-            { latitude: 21.045951, longitude: 105.794702, altitude: 0 },
-            { latitude: 21.046276, longitude: 105.794661, altitude: 0 },
-            { latitude: 21.045340, longitude: 105.794620, altitude: 0 }
+            { latitude: 21.046281, longitude: 105.794618, altitude: 0.1 },    
+            { latitude: 21.046178, longitude: 105.795098, altitude: 0.2 },
+            { latitude: 21.045951, longitude: 105.794702, altitude: 0.3 },
+            { latitude: 21.046276, longitude: 105.794661, altitude: 0.5 },
+            { latitude: 21.045340, longitude: 105.794620, altitude: 0.1 }
         ],
 
         init: function () {
