@@ -57,6 +57,7 @@
             (coords.longitude > zeroCoords.longitude ? 1 : -1);
 
         position.y = coords.altitude - zeroCoords.altitude;
+        alert(position.y);
         
         position.z = GPSUtils.calculateDistance(zeroCoords, {
             longitude: zeroCoords.longitude,
@@ -320,6 +321,10 @@
         watchGPSSuccess: function (position) {
             // After watching position successfully, update coordinate of component
             this.coords = position.coords;
+
+            // Get altitude -- FIX HEIGHT FOR TESTING
+            this.coords.altitude = 0.3;
+
             // Update relative position in AR/VR scence
             this.updatePosition();
         },
