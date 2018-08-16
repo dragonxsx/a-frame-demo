@@ -322,7 +322,7 @@
             this.coords = position.coords;
 
             // Get altitude -- FIX HEIGHT FOR TESTING
-            this.coords.altitude = 20;
+            this.coords.altitude = 2;
 
             // Update relative position in AR/VR scence
             this.updatePosition();
