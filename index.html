@@ -56,7 +56,7 @@
             var camera = document.getElementById('camera');
 
             camera.addEventListener('componentchanged', function (evt) {
-                alert(evt.detail.name);
+                document.querySelector('#compass_heading').innerText = compassRotation.heading;
                 switch (evt.detail.name) {
                     case 'rotation':
                         //console.log('camera rotation changed', evt.detail.newData);
@@ -70,6 +70,8 @@
                         if (compassRotation) {
                             compass_heading.innerText = compassRotation.heading;
                             device_orientation.innerText = compassRotation.currentOrientation;
+
+                            
                         }
                         break;
                     case 'position':
