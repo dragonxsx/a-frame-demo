@@ -56,12 +56,13 @@
             var camera = document.getElementById('camera');
 
             camera.addEventListener('componentchanged', function (evt) {
-                document.querySelector('#compass_heading').innerText = compassRotation.heading;
                 switch (evt.detail.name) {
                     case 'rotation':
                         //console.log('camera rotation changed', evt.detail.newData);
                         var compassRotation = camera.components['compass-rotation'];
                         var lookControls = camera.components['look-controls'];
+                        document.querySelector('#compass_heading').innerText = compassRotation.heading;
+
                         camera_angle.innerText = evt.detail.newData.y;
                         if (lookControls) {
                             yaw_angle.innerText = THREE.Math.radToDeg(lookControls.yawObject.rotation.y);
