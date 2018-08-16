@@ -57,7 +57,6 @@
             (coords.longitude > zeroCoords.longitude ? 1 : -1);
 
         position.y = coords.altitude - zeroCoords.altitude;
-        alert(position.y);
         
         position.z = GPSUtils.calculateDistance(zeroCoords, {
             longitude: zeroCoords.longitude,
