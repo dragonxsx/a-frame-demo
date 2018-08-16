@@ -502,13 +502,13 @@
 
         // Path
         points: [
-            { latitude: 21.046456, longitude: 105.794621, altitude: 0 },
-            { latitude: 21.046281, longitude: 105.794618, altitude: 0.1 },    
-            { latitude: 21.046178, longitude: 105.795098, altitude: 0.2 },
-            { latitude: 21.045951, longitude: 105.794702, altitude: 0.3 },
-            { latitude: 21.046276, longitude: 105.794661, altitude: 0.5 },
-            { latitude: 21.045340, longitude: 105.794620, altitude: 0.1 }
+            { latitude: 21.046180, longitude: 105.794977, altitude: 0 },
+            { latitude: 21.045975, longitude: 105.794214, altitude: 1 },    
+            { latitude: 21.045825, longitude: 105.794721, altitude: 2 },
+            { latitude: 21.045457, longitude: 105.794598, altitude: 3 }
         ],
+
+        // 21.045457, 105.794598
 
         init: function () {
             if (this.deferredInit()) { return; }
