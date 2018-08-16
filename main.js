@@ -311,6 +311,10 @@
                     latitude: this.data['zero-crd-latitude'],
                     longitude: this.data['zero-crd-longitude']
                 };
+
+                if(isNaN(this.data['zero-crd-altitude'])){
+                    this.zeroCoords.altitude = this.data['zero-crd-altitude'];
+                }
             }
 
             // Get and save the result of 'navigator.geolocation.watchPosition'  as watching id
