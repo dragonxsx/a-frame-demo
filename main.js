@@ -316,8 +316,7 @@
                     this.zeroCoords.altitude = this.data['zero-crd-altitude'];
                 }
             }
-
-            alert(0);
+            
             // Get and save the result of 'navigator.geolocation.watchPosition'  as watching id
             this.watchId = this.watchGPS(this.watchGPSSuccess.bind(this));
         },
@@ -329,7 +328,6 @@
         watchGPSSuccess: function (position) {
             // After watching position successfully, update coordinate of component
             this.coords = position.coords;
-            alert(this.coords.latitude);
 
             //Get altitude -- FIX HEIGHT FOR TESTING
             //this.coords.altitude = 0;
