@@ -322,7 +322,7 @@
             this.coords = position.coords;
 
             // Get altitude -- FIX HEIGHT FOR TESTING
-            this.coords.altitude = 2;
+            this.coords.altitude = 0;
 
             // Update relative position in AR/VR scence
             this.updatePosition();
@@ -502,9 +502,9 @@
         // Path
         points: [
             { latitude: 21.046180, longitude: 105.794977, altitude: 0 },
-            { latitude: 21.045975, longitude: 105.794214, altitude: 1 },    
-            { latitude: 21.045825, longitude: 105.794721, altitude: 2 },
-            { latitude: 21.045457, longitude: 105.794598, altitude: 0 }
+            { latitude: 21.045975, longitude: 105.794214, altitude: 0.1 },    
+            { latitude: 21.045825, longitude: 105.794721, altitude: 0.5 },
+            { latitude: 21.045457, longitude: 105.794598, altitude: 0.2 }
         ],
 
         // 21.045457, 105.794598
