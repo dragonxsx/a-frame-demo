@@ -56,7 +56,7 @@
             var camera = document.getElementById('camera');
 
             camera.addEventListener('componentchanged', function (evt) {
-                alert(evt.detail.newData);
+                alert(evt.detail.name);
                 switch (evt.detail.name) {
                     case 'rotation':
                         //console.log('camera rotation changed', evt.detail.newData);
