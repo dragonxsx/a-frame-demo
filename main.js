@@ -567,8 +567,25 @@
         },
       
         log : function () {
-          var cameraEl = this.el.sceneEl.camera.el;
-          var rotation = cameraEl.getAttribute('rotation');
+        //   var cameraEl = this.el.sceneEl.camera.el;
+        //   var rotation = cameraEl.getAttribute('rotation');
+        //   var compassRotation = cameraEl.getAttribute('compass-rotation');
+        //   var lookControls = cameraEl.getAttribute('look-controls');
+
+            var camera = document.getElementById('camera');
+            var compassRotation = camera.components['compass-rotation'];
+            var lookControls = camera.components['look-controls'];
+
+            //document.querySelector('#camera_angle').innerText = 
+            if  (lookControls) {
+                document.querySelector('#yaw_angle').innerText = THREE.Math.radToDeg(lookControls.yawObject.rotation.y);
+            }
+
+            if (compassRotation){
+                document.querySelector('#compass_heading').innerText = compassRotation.heading;
+                document.querySelector('#device_orientation').innerText = compassRotation.currentOrientation;
+            }
+          
         //   var worldPos = new THREE.Vector3();
         //   worldPos.setFromMatrixPosition(cameraEl.object3D.matrixWorld);
         //   console.log("Time: " + this.data.seconds 
