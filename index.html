@@ -56,42 +56,20 @@
             var camera = document.getElementById('camera');
 
             camera.addEventListener('componentchanged', function (evt) {
+                alert(1);
                 switch (evt.detail.name) {
                     case 'rotation':
                         //console.log('camera rotation changed', evt.detail.newData);
                         var compassRotation = camera.components['compass-rotation'];
                         var lookControls = camera.components['look-controls'];
-                        //document.querySelector('#compass_heading').innerText = compassRotation.heading;
 
                         camera_angle.innerText = evt.detail.newData.y;
-                        if (lookControls) {
-                            yaw_angle.innerText = THREE.Math.radToDeg(lookControls.yawObject.rotation.y);
-                        }
-
-                        //if (compassRotation) {
-                        //    compass_heading.innerText = compassRotation.heading;
-                        //    device_orientation.innerText = compassRotation.currentOrientation;     
-                        //}
                         break;
                     case 'position':
                         //console.log('camera position changed', evt.detail.newData);
                         var gpsPosition = camera.components['gps-position'];
                         camera_p_x.innerText = evt.detail.newData.x;
                         camera_p_z.innerText = evt.detail.newData.z;
-                        if (gpsPosition) {
-                            if (gpsPosition.coords) {
-                                crd_longitude.innerText = gpsPosition.coords.longitude;
-                                crd_latitude.innerText = gpsPosition.coords.latitude;
-                                crd_altitude.innerText = gpsPosition.coords.altitude;
-                                crd_accuracy.innerText = gpsPosition.coords.accuracy;
-                            }
-                            if (gpsPosition.zeroCoords) {
-                                zero_crd_longitude.innerText = gpsPosition.zeroCoords.longitude;
-                                zero_crd_latitude.innerText = gpsPosition.zeroCoords.latitude;
-                                zero_crd_altitude.innerText = gpsPosition.zeroCoords.altitude;
-                            }
-                        }
-
                         break;
                 }
             });

@@ -567,16 +567,11 @@
         },
       
         log : function () {
-        //   var cameraEl = this.el.sceneEl.camera.el;
-        //   var rotation = cameraEl.getAttribute('rotation');
-        //   var compassRotation = cameraEl.getAttribute('compass-rotation');
-        //   var lookControls = cameraEl.getAttribute('look-controls');
-
             var camera = document.getElementById('camera');
             var compassRotation = camera.components['compass-rotation'];
             var lookControls = camera.components['look-controls'];
+            var gpsPosition = camera.components['gps-position'];
 
-            //document.querySelector('#camera_angle').innerText = 
             if  (lookControls) {
                 document.querySelector('#yaw_angle').innerText = THREE.Math.radToDeg(lookControls.yawObject.rotation.y);
             }
@@ -586,6 +581,20 @@
                 document.querySelector('#device_orientation').innerText = compassRotation.currentOrientation;
             }
           
+            if (gpsPosition) {
+                if (gpsPosition.coords) {
+                    document.querySelector('#crd_longitude').innerText = gpsPosition.coords.longitude;
+                    document.querySelector('#crd_latitude').innerText = gpsPosition.coords.latitude;
+                    document.querySelector('#crd_altitude').innerText = gpsPosition.coords.altitude;
+                    document.querySelector('#crd_accuracy').innerText = gpsPosition.coords.accuracy;
+                }
+                if (gpsPosition.zeroCoords) {
+                    document.querySelector('#zero_crd_longitude').innerText = gpsPosition.zeroCoords.longitude;
+                    document.querySelector('#zero_crd_latitude').innerText = gpsPosition.zeroCoords.latitude;
+                    document.querySelector('#zero_crd_altitude').innerText = gpsPosition.zeroCoords.altitude;
+                }
+            }
+
         //   var worldPos = new THREE.Vector3();
         //   worldPos.setFromMatrixPosition(cameraEl.object3D.matrixWorld);
         //   console.log("Time: " + this.data.seconds 
@@ -599,7 +608,7 @@
         },
       
         tick: function () {  
-          if (Date.now() - this.data.timestamp > 1000) {
+          if (Date.now() - this.data.timestamp > 100) {
             this.data.timestamp += 1000;
             this.data.seconds += 1;
             this.log();
