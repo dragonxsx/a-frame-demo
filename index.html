@@ -61,19 +61,17 @@
                         //console.log('camera rotation changed', evt.detail.newData);
                         var compassRotation = camera.components['compass-rotation'];
                         var lookControls = camera.components['look-controls'];
-                        document.querySelector('#compass_heading').innerText = compassRotation.heading;
+                        //document.querySelector('#compass_heading').innerText = compassRotation.heading;
 
                         camera_angle.innerText = evt.detail.newData.y;
                         if (lookControls) {
                             yaw_angle.innerText = THREE.Math.radToDeg(lookControls.yawObject.rotation.y);
                         }
 
-                        if (compassRotation) {
-                            compass_heading.innerText = compassRotation.heading;
-                            device_orientation.innerText = compassRotation.currentOrientation;
-
-                            
-                        }
+                        //if (compassRotation) {
+                        //    compass_heading.innerText = compassRotation.heading;
+                        //    device_orientation.innerText = compassRotation.currentOrientation;     
+                        //}
                         break;
                     case 'position':
                         //console.log('camera position changed', evt.detail.newData);
