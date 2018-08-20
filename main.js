@@ -577,6 +577,7 @@
             var lookControls = camera.components['look-controls'];
 
             //document.querySelector('#camera_angle').innerText = 
+            alert(1);
             if  (lookControls) {
                 document.querySelector('#yaw_angle').innerText = THREE.Math.radToDeg(lookControls.yawObject.rotation.y);
             }
