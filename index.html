@@ -56,18 +56,14 @@
             var camera = document.getElementById('camera');
 
             camera.addEventListener('componentchanged', function (evt) {
-                alert(1);
+                alert(evt.detail.newData);
                 switch (evt.detail.name) {
                     case 'rotation':
                         //console.log('camera rotation changed', evt.detail.newData);
-                        var compassRotation = camera.components['compass-rotation'];
-                        var lookControls = camera.components['look-controls'];
-
                         camera_angle.innerText = evt.detail.newData.y;
                         break;
                     case 'position':
                         //console.log('camera position changed', evt.detail.newData);
-                        var gpsPosition = camera.components['gps-position'];
                         camera_p_x.innerText = evt.detail.newData.x;
                         camera_p_z.innerText = evt.detail.newData.z;
                         break;
