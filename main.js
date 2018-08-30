@@ -561,9 +561,20 @@
 
         tick: function() {
             if (Date.now() - this.data.timestamp > 1000) {
-                 alert(1);
-                 object3d = this.el.getOrCreateObject3D('mesh',THREE.Mesh()).el;
-                 alert(object3d);
+                alert(1);
+
+                // Create a geometry
+                // 	Create a box (cube) of 10 width, length, and height
+                geometry = new THREE.BoxGeometry( 10, 10, 10 );
+                // Create a MeshBasicMaterial with a color white and with its wireframe turned on
+                material = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true} );
+
+                // Combine the geometry and material into a mesh
+                mesh = new THREE.Mesh( geometry, material );
+
+                this.el.getOrCreateObject3D('mesh', mesh);
+                alert(object3d);
+                
                 // var q = THREE.Quaternion(-Math.sqrt(0.5), 1, 0, Math.sqrt(0.5));
                 //object3d.quaternion.copy(q);
                 this.data.timestamp += 1000;
