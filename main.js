@@ -560,8 +560,8 @@
         },
 
         tick: function() {
-            if (Date.now() - this.data.timestamp > 1000) {
-                this.data.timestamp += 1000;
+            if (Date.now() - this.data.timestamp > 100) {
+                this.data.timestamp += 100;
                 //this.updatePosition();
                 // TODO: 磁石の北と真北のズレを修正しなくていいのか確認する。
 
