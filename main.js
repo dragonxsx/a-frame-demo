@@ -565,12 +565,12 @@
 
                 // Create a geometry
                 // 	Create a box (cube) of 10 width, length, and height
-                geometry = new THREE.BoxGeometry( 10, 10, 10 );
+                var geometry = new THREE.BoxGeometry( 10, 10, 10 );
                 // Create a MeshBasicMaterial with a color white and with its wireframe turned on
-                material = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true} );
+                var material = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true} );
 
                 // Combine the geometry and material into a mesh
-                mesh = new THREE.Mesh( geometry, material );
+                var mesh = new THREE.Mesh( geometry, material );
 
                 this.el.getOrCreateObject3D('mesh', mesh);
                 //alert(object3d);
