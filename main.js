@@ -555,9 +555,6 @@
                 // Change to meshline
                 var roadMesh = new Road(relativePoints);
 
-                var q = T.Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5));
-                roadMesh.mesh.applyQuaternion(q);
-
                 this.el.setObject3D('mesh', roadMesh.mesh);
             }
         },
@@ -572,6 +569,8 @@
                 // //camera.quaternion.setFromEuler(new T.Euler(T.Math.degToRad(orientation.beta), T.Math.degToRad(orientation.alpha), -T.Math.degToRad(orientation.gamma), 'YXZ'));
                 // //camera.quaternion.multiply(new T.Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5)));  // X軸を中心に90度回転します。
                 var q = T.Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5));
+                var object = scene.getObjectByName('mesh');
+                object.applyQuaternion(q);
                 // this.el.object3D.quaternion.copy( q )
             }
         }
