@@ -562,9 +562,9 @@
         tick: function() {
             if (Date.now() - this.data.timestamp > 10000) {
                 if(this.data.timestamp>10000) {
-                    object3d = this.el.getObject3D('mesh');
-                    var q = THREE.Quaternion(-Math.sqrt(0.5), 1, 0, Math.sqrt(0.5));
-                    object3d.quaternion.copy(q);
+                    // object3d = this.el.getObject3D('mesh');
+                    // var q = THREE.Quaternion(-Math.sqrt(0.5), 1, 0, Math.sqrt(0.5));
+                    // object3d.quaternion.copy(q);
                     alert(1);
                 }
                 this.data.timestamp += 10000;
