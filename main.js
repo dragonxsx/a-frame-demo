@@ -559,10 +559,10 @@
 
                 var q = T.Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5));
                 var object = this.el.getObjectByName('mesh');
-                alert(object);
-                if(object != null){
-                    object.applyQuaternion(q);
-                }
+                // alert(object);
+                // if(object != null){
+                //     object.applyQuaternion(q);
+                // }
             }
         },
 
