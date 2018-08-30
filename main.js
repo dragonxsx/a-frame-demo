@@ -573,7 +573,7 @@
                 mesh = new THREE.Mesh( geometry, material );
 
                 this.el.getOrCreateObject3D('mesh', mesh);
-                alert(object3d);
+                //alert(object3d);
                 
                 // var q = THREE.Quaternion(-Math.sqrt(0.5), 1, 0, Math.sqrt(0.5));
                 //object3d.quaternion.copy(q);
