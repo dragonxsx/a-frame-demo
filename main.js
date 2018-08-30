@@ -560,9 +560,12 @@
         },
 
         tick: function() {
-            if (Date.now() - this.data.timestamp > 100) {
-                this.data.timestamp += 100;
-                this.updatePosition();
+            if (Date.now() - this.data.timestamp > 10000) {
+                if(this.data.timestamp != 0) {
+                    this.updatePosition();
+                }
+                this.data.timestamp += 10000;
+                
                 // TODO: 磁石の北と真北のズレを修正しなくていいのか確認する。
 
                 // //var camera = document.querySelector(this.data.cameraSelector);
