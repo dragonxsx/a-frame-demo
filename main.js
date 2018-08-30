@@ -556,13 +556,6 @@
                 var roadMesh = new Road(relativePoints);
 
                 this.el.setObject3D('mesh', roadMesh.mesh);
-
-                var q = T.Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5));
-                var object = this.el.getObjectByName('mesh');
-                // alert(object);
-                // if(object != null){
-                //     object.applyQuaternion(q);
-                // }
             }
         },
 
