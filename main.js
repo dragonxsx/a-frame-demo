@@ -565,8 +565,10 @@
                 
                 // TODO: 磁石の北と真北のズレを修正しなくていいのか確認する。
 
-                camera.quaternion.setFromEuler(new T.Euler(T.Math.degToRad(orientation.beta), T.Math.degToRad(orientation.alpha), -T.Math.degToRad(orientation.gamma), 'YXZ'));
-                camera.quaternion.multiply(new T.Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5)));  // X軸を中心に90度回転します。
+                var camera = document.querySelector(this.data.cameraSelector);
+                //camera.quaternion.setFromEuler(new T.Euler(T.Math.degToRad(orientation.beta), T.Math.degToRad(orientation.alpha), -T.Math.degToRad(orientation.gamma), 'YXZ'));
+                var q = camera.quaternion.multiply(new T.Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5)));  // X軸を中心に90度回転します。
+                this.el.object3D.quaternion.copy( q )
             }
         }
     });
