@@ -501,7 +501,8 @@
             cameraSelector: {
                 type: 'string',
                 default: 'a-camera, [camera]'
-            }
+            },
+            timestamp: {type: 'int'}
         },
 
         // Path
@@ -555,6 +556,17 @@
                 var roadMesh = new Road(relativePoints);
 
                 this.el.setObject3D('mesh', roadMesh.mesh);
+            }
+        },
+
+        tick: function() {
+            if (Date.now() - this.data.timestamp > 100) {
+                this.data.timestamp += 100;
+                
+                // TODO: 磁石の北と真北のズレを修正しなくていいのか確認する。
+
+                camera.quaternion.setFromEuler(new T.Euler(T.Math.degToRad(orientation.beta), T.Math.degToRad(orientation.alpha), -T.Math.degToRad(orientation.gamma), 'YXZ'));
+                camera.quaternion.multiply(new T.Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5)));  // X軸を中心に90度回転します。
             }
         }
     });

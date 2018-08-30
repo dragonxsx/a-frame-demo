@@ -56,16 +56,16 @@
             var camera = document.getElementById('camera');
 
             camera.addEventListener('componentchanged', function (evt) {
-                alert(evt.detail.name);
                 switch (evt.detail.name) {
                     case 'rotation':
                         //console.log('camera rotation changed', evt.detail.newData);
-                        camera_angle.innerText = evt.detail.newData.y;
+                        //camera_angle.innerText = evt.detail.newData.y;
                         break;
                     case 'position':
                         //console.log('camera position changed', evt.detail.newData);
                         camera_p_x.innerText = evt.detail.newData.x;
                         camera_p_z.innerText = evt.detail.newData.z;
+                        camera_angle.innerText = evt.detail.newData.y;
                         break;
                 }
             });
