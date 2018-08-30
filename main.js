@@ -556,6 +556,8 @@
                 var roadMesh = new Road(relativePoints);
 
                 this.el.setObject3D('mesh', roadMesh.mesh);
+
+                //var object = this.el.getObjectByName('mesh');
             }
         },
 
@@ -570,7 +572,11 @@
                 // //camera.quaternion.multiply(new T.Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5)));  // X軸を中心に90度回転します。
                 var q = T.Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5));
                 var object = this.el.getObjectByName('mesh');
-                object.applyQuaternion(q);
+                alert(object);
+                if(object != null){
+                    object.applyQuaternion(q);
+                }
+                
                 // this.el.object3D.quaternion.copy( q )
             }
         }
