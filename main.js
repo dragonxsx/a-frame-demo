@@ -556,7 +556,7 @@
                 var roadMesh = new Road(relativePoints);
 
                 var q = T.Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5));
-                roadMesh.mesh.quaternion.copy(q);
+                roadMesh.mesh.applyQuaternion(q);
 
                 this.el.setObject3D('mesh', roadMesh.mesh);
             }
