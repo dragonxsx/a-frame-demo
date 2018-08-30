@@ -556,16 +556,17 @@
                 var roadMesh = new Road(relativePoints);
 
                 this.el.setObject3D('mesh', roadMesh.mesh);
+
+                object3d = this.el.getObject3D('mesh');
+                var q = THREE.Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5));
+                object3d.quaternion.copy(q);
             }
         },
 
         tick: function() {
             if (Date.now() - this.data.timestamp > 10000) {
-                if(this.data.timestamp != 0) {
-                    this.updatePosition();
-                }
                 this.data.timestamp += 10000;
-                
+
                 // TODO: 磁石の北と真北のズレを修正しなくていいのか確認する。
 
                 // //var camera = document.querySelector(this.data.cameraSelector);
@@ -573,6 +574,8 @@
                 // //camera.quaternion.multiply(new T.Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5)));  // X軸を中心に90度回転します。
                 
                 // this.el.object3D.quaternion.copy( q )
+
+                
             }
         }
     });
