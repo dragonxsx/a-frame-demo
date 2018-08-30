@@ -562,7 +562,7 @@
         tick: function() {
             if (Date.now() - this.data.timestamp > 1000) {
                 this.data.timestamp += 1000;
-                this.updatePosition();
+                //this.updatePosition();
                 // TODO: 磁石の北と真北のズレを修正しなくていいのか確認する。
 
                 // //var camera = document.querySelector(this.data.cameraSelector);
